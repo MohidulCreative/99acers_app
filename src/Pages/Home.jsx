@@ -9,7 +9,7 @@ const Home = () => {
             <QuckMenu />
             <Banner />
             <Options />
-            <div className="grid grid-cols-2 gap-2 p-8">
+            <div className="grid gap-2 p-2">
                 {/* Box 1: Portfolio Management */}
                 <div className="box bg-gray-200 rounded p-4 text-center">
                     <i className="fas fa-chart-pie text-blue-500 text-4xl mb-2"></i>
