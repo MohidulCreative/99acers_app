@@ -4,12 +4,12 @@ import React from "react";
 const QuckMenu = () => {
     return (
         <div className="flex gap-4 p-2 pt-0 mb-4 justify-center items-center">
-            {/* Home */}
+            {/* About */}
             <div className="text-center flex flex-col justify-center items-center">
                 <div className="rounded-full w-4 h-4 p-3 bg-orange-700 bg-opacity-90 flex justify-center items-center text-white">
-                    <i className="fas fa-home text-blue-700 text-sm"></i>
+                    <i className="fas fa-heart text-blue-700 text-sm"></i>
                 </div>
-                <p className="text-gray-300 text-xs mt-1">Home</p>
+                <p className="text-gray-300 text-xs mt-1">About</p>
             </div>
 
             {/* Telegram */}
