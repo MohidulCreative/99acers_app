@@ -39,6 +39,12 @@ body {
     padding-right: .5rem;
   }
 
+  .colori {
+    color: white !important;
+  }
+  .active {
+    background: crimson !important;
+  }
   
 .navbar a:active {
     background: crimson;

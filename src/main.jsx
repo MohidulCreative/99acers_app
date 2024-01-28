@@ -12,6 +12,8 @@ const router = createBrowserRouter(
     createRoutesFromElements(
         <Route path="/" errorElement={<ErrorPage />} element={<Layout />}>
             <Route path="/" element={<Home />} />
+            <Route path="/account" element={<Home />} />
+            <Route path="/care" element={<Home />} />
             <Route path="/plan/new plan" element={<Plan />} />
             <Route path="/plan/normal" element={<Plan />} />
             <Route path="/plan/advance" element={<Plan />} />

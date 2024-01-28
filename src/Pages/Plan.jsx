@@ -109,7 +109,7 @@ const Plan = () => {
                <div className="flex flex-col items-center justify-center h-screen">
                   <div className="text-3xl font-bold mb-4">Coming Soon normal!</div>
                   <p className="text-gray-500 text-center px-2">
-                     We are working on exciting new features. Stay tuned for updates!
+                     We are looking for exciting new project. Stay tuned for updates!
                   </p>
                   <img
                      className="mt-8 w-48 h-48 object-cover rounded-lg"
@@ -121,7 +121,7 @@ const Plan = () => {
                <div className="flex flex-col items-center justify-center h-screen">
                   <div className="text-3xl font-bold mb-4">Coming Soon!</div>
                   <p className="text-gray-500 text-center px-2">
-                     We are working on exciting new features. Stay tuned for updates!
+                     We are looking for exciting new project. Stay tuned for updates!
                   </p>
                   <img
                      className="mt-8 w-48 h-48 object-cover rounded-lg"
