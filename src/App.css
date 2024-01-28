@@ -38,13 +38,6 @@ body {
     color: crimson;
     padding-right: .5rem;
   }
-
-  .colori {
-    color: white !important;
-  }
-  .active {
-    background: crimson !important;
-  }
   
 .navbar a:active {
     background: crimson;
@@ -54,9 +47,21 @@ body {
     color: #fff;
   }
 
+  .colori {
+    color: white !important;
+  }
+  
+  .active {
+    background: crimson !important;
+  }
+
   @media (max-width: 768px) {
     .heading {
       font-size: 12vw;
+    }
+    .navbar a {
+      padding: 0.5rem;
+      font-size: 1.3rem;
     }
     .navbar a i {
       padding: 0;
@@ -225,4 +230,12 @@ body {
 
 .swiper-pagination .swiper-pagination-bullet-active {
   background: var(--primary);
+}
+
+/* plan page custom css */
+
+.project_detail p {
+  font-size: 14px;
+  padding: 1px;
+  color: rgba(255, 255, 255, 0.771)
 }

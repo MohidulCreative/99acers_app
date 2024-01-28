@@ -3,6 +3,7 @@ import Header from "../components/Header/Header";
 import { Link } from "react-router-dom";
 import image_1 from "../assets/images/img_1.jpg";
 import comming_soon from "../assets/images/comming_soon.jpg";
+import Newplan from "../components/plan/Newplan";
 
 const Plan = () => {
       const [activeLink, setActiveLink] = useState('/plan/new plan');
@@ -23,7 +24,7 @@ const Plan = () => {
                     to="/plan/new plan"
                     onClick={() => handleLinkClick("/plan/new plan")}
                 >
-                    new plan
+                    New plan
                 </Link>
                 <Link
                     className={`px-3 py-4 ${
@@ -32,7 +33,7 @@ const Plan = () => {
                     to="/plan/normal"
                     onClick={() => handleLinkClick("/plan/normal")}
                 >
-                    normal
+                    Normal
                 </Link>
                 <Link
                     className={`px-3 py-4 ${
@@ -41,7 +42,7 @@ const Plan = () => {
                     to="/plan/advance"
                     onClick={() => handleLinkClick("/plan/advance")}
                 >
-                    advance
+                    Advance
                 </Link>
                 <Link
                     className={`px-3 py-4 ${
@@ -50,7 +51,7 @@ const Plan = () => {
                     to="/plan/pro"
                     onClick={() => handleLinkClick("/plan/pro")}
                 >
-                    pro
+                    Pro
                 </Link>
             </div>
             {activeLink === "/plan/new plan" ? (
@@ -59,7 +60,7 @@ const Plan = () => {
                 <div className="w-full h-auto">
                     <img src={image_1} alt="new plan image" />
                 </div>
-                <div className="w-[70%] bg-[#f54141a9] p-2 rounded-lg absolute left-0 right-0 bottom-[-20%] mx-auto">
+                <div className="w-[70%] bg-[crimson] bg-opacity-60 backdrop-blur-[1px] p-2 rounded-lg absolute left-0 right-0 bottom-[-20%] mx-auto">
                     <h2 className="text-xl text-center pb-2">
                         Mahalaxmi Apartment
                     </h2>
@@ -73,7 +74,7 @@ const Plan = () => {
                     </div>
                 </div>
             </div>
-
+            <Newplan />
             <div className="bg-orange-600 p-6 m-2 mx-auto max-w-80 mt-20">
                 <h2>Product A agent property</h2>
                 <span>price: 200</span>
