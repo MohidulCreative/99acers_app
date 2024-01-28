@@ -74,37 +74,14 @@ const Plan = () => {
                     </div>
                 </div>
             </div>
-            <Newplan />
-            <div className="bg-orange-600 p-6 m-2 mx-auto max-w-80 mt-20">
-                <h2>Product A agent property</h2>
-                <span>price: 200</span>
-                <p>daily get: 95</p>
-                <p>total income: 1800</p>
+            <div className="mt-20">
+            <Newplan title="Mahalaxmi Apartment" price={1000} days={12} percent={0.3} daily={200} total={2400}  />
             </div>
-            <div className="bg-orange-600 p-6 m-2 mx-auto max-w-80">
-                <h2>Product A agent property</h2>
-                <span>price: 200</span>
-                <p>daily get: 95</p>
-                <p>total income: 1800</p>
-            </div>
-            <div className="bg-orange-600 p-6 m-2 mx-auto max-w-80">
-                <h2>Product A agent property</h2>
-                <span>price: 200</span>
-                <p>daily get: 95</p>
-                <p>total income: 1800</p>
-            </div>
-            <div className="bg-orange-600 p-6 m-2 mx-auto max-w-80">
-                <h2>Product A agent property</h2>
-                <span>price: 200</span>
-                <p>daily get: 95</p>
-                <p>total income: 1800</p>
-            </div>
-            <div className="bg-orange-600 p-6 m-2 mx-auto max-w-80">
-                <h2>Product A agent property</h2>
-                <span>price: 200</span>
-                <p>daily get: 95</p>
-                <p>total income: 1800</p>
-            </div>
+            <Newplan title="Mahalaxmi Apartment" price={1600} days={20} percent={0.5} daily={450} total={9000} />
+            <Newplan title="Mahalaxmi Apartment" price={2000} days={27} percent={0.6} daily={600} total={16200} />
+            <Newplan title="Mahalaxmi Apartment" price={10000} days={30} percent={1} daily={1000} total={30000} />
+            <Newplan title="Mahalaxmi Apartment" price={1600} days={30} percent={1.3} daily={1400} total={42000} />
+               
             </div>
             ): activeLink === "/plan/normal" ? (
                <div className="flex flex-col items-center justify-center h-screen">
