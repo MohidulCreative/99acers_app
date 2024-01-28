@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import Header from "../components/Header/Header";
 import { Link } from "react-router-dom";
 import image_1 from "../assets/images/img_1.jpg";
+import comming_soon from "../assets/images/comming_soon.jpg";
 
 const Plan = () => {
       const [activeLink, setActiveLink] = useState('/plan/new plan');
@@ -52,8 +53,9 @@ const Plan = () => {
                     pro
                 </Link>
             </div>
-
-            <div className="relative mt-16">
+            {activeLink === "/plan/new plan" ? (
+               <div>
+                <div className="relative mt-16">
                 <div className="w-full h-auto">
                     <img src={image_1} alt="new plan image" />
                 </div>
@@ -102,6 +104,34 @@ const Plan = () => {
                 <p>daily get: 95</p>
                 <p>total income: 1800</p>
             </div>
+            </div>
+            ): activeLink === "/plan/normal" ? (
+               <div className="flex flex-col items-center justify-center h-screen">
+                  <div className="text-3xl font-bold mb-4">Coming Soon normal!</div>
+                  <p className="text-gray-500 text-center px-2">
+                     We are working on exciting new features. Stay tuned for updates!
+                  </p>
+                  <img
+                     className="mt-8 w-48 h-48 object-cover rounded-lg"
+                     src={comming_soon}
+                     alt="Coming Soon"
+                  />
+               </div>
+             ) : (
+               <div className="flex flex-col items-center justify-center h-screen">
+                  <div className="text-3xl font-bold mb-4">Coming Soon!</div>
+                  <p className="text-gray-500 text-center px-2">
+                     We are working on exciting new features. Stay tuned for updates!
+                  </p>
+                  <img
+                     className="mt-8 w-48 h-48 object-cover rounded-lg"
+                     src={comming_soon}
+                     alt="Coming Soon"
+                  />
+               </div>
+            )}        
+
+           
         </>
     );
 };
