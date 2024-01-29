@@ -17,7 +17,7 @@ const Account = () => {
             <div className="flex justify-around items-center py-4 mt-2 gap-1">
                 <div className="text-left bg-[crimson] w-1/3 h-16 rounded p-2">
                     <p className="text-[11px]">Project income</p>
-                    <h2 className="py-1">₹ 500/-</h2>
+                    <h2 className="py-1">₹ 8750/-</h2>
                 </div>
                 <div className="text-left bg-[crimson] w-1/3 h-16 rounded p-2">
                     <p className="text-[11px]">Commision</p>
