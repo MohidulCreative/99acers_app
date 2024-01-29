@@ -44,14 +44,24 @@ const Footer = () => {
 
                 <Link
                     to="plan/new_plan"
-                    className={` ${
-                        activeLink === "/plan/new_plan" || "/plan/normal" || "/plan/advance" || "/plan/pro" ? "active" : ""
+                    className={`${
+                        activeLink === "/plan/new_plan" ||
+                        activeLink === "/plan/normal" ||
+                        activeLink === "/plan/advance" ||
+                        activeLink === "/plan/pro"
+                            ? "active"
+                            : ""
                     }`}
                     onClick={() => handleLinkClick("/plan/new_plan")}
                 >
                     <i
                         className={`fas fa-briefcase ${
-                            activeLink === "/plan/new_plan" || "/plan/normal" || "/plan/advance" || "/plan/pro"  ? "colori" : ""
+                            activeLink === "/plan/new_plan" ||
+                            activeLink === "/plan/normal" ||
+                            activeLink === "/plan/advance" ||
+                            activeLink === "/plan/pro"
+                                ? "colori"
+                                : ""
                         }`}
                     ></i>{" "}
                     <span>plan</span>
