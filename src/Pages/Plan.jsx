@@ -27,7 +27,7 @@ const Plan = () => {
                         activeLink === "/plan/new_plan" ? "border-b-2" : ""
                     }`}
                     to="/plan/new_plan"
-                    onClick={() => handleLinkClick("/plan/new plan")}
+                    onClick={() => handleLinkClick("/plan/new_plan")}
                 >
                     New plan
                 </Link>
