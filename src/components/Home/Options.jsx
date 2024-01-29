@@ -2,7 +2,7 @@ import React from "react";
 
 const Options = () => {
     return (
-        <div className="grid grid-cols-3 gap-y-8 py-4 px-8">
+        <div className="grid grid-cols-3 gap-y-8 py-8 px-2">
             <div className="text-center flex flex-col justify-center items-center">
                 <div className="rounded-xl w-10 h-10 p-8 flex justify-center items-center bg-gray-500 bg-opacity-30">
                     <span className="material-symbols-outlined text-blue-700 text-4xl">
