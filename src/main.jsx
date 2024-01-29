@@ -7,12 +7,13 @@ import Home from "./Pages/Home.jsx";
 import Plan from "./Pages/Plan.jsx";
 import Layout from "./components/Layout.jsx";
 import ErrorPage from './Pages/ErrorPage.jsx'
+import Account from "./Pages/Account.jsx";
 
 const router = createBrowserRouter(
     createRoutesFromElements(
         <Route path="/" errorElement={<ErrorPage />} element={<Layout />}>
             <Route path="/" element={<Home />} />
-            <Route path="/account" element={<Home />} />
+            <Route path="/account" element={<Account />} />
             <Route path="/care" element={<Home />} />
             <Route path="/plan/new plan" element={<Plan />} />
             <Route path="/plan/normal" element={<Plan />} />
