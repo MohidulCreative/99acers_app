@@ -21,9 +21,9 @@ const AccountOptions = () => {
             </div>
             <div className="text-center py-4">
                 <span className="material-symbols-outlined text-3xl text-blue-500">
-                    icecream
+                    open_in_new
                 </span>
-                <p className="text-[10px] leading-[0.70rem]">Reward</p>
+                <p className="text-[10px] leading-[0.70rem]">My project</p>
             </div>
             <div className="text-center py-4">
                 <span className="material-symbols-outlined text-3xl text-blue-500">
@@ -48,6 +48,12 @@ const AccountOptions = () => {
                     history
                 </span>
                 <p className="text-[10px] leading-[0.70rem]">History</p>
+            </div>
+            <div className="text-center py-4">
+                <span className="material-symbols-outlined text-3xl text-blue-500">
+                    icecream
+                </span>
+                <p className="text-[10px] leading-[0.70rem]">Reward</p>
             </div>
             <div className="text-center py-4">
                 <span className="material-symbols-outlined text-3xl text-blue-500">

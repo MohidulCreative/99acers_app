@@ -13,7 +13,7 @@ import slide_image_5 from "../../assets/images/img_5.jpg";
 
 const Banner = () => {
   return (
-    <div className="container mx-auto mt-20">
+    <div className="container mx-auto mt-20 pt-4">
       <Swiper
         effect="coverflow"
         grabCursor={true}
