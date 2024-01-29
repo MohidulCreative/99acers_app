@@ -1,12 +1,17 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const Footer = () => {
-    const [activeLink, setActiveLink] = useState("/");
-
+    const location = useLocation();
+    const [activeLink, setActiveLink] = useState(location.pathname);
     const handleLinkClick = (to) => {
         setActiveLink(to);
     };
+
+    // Update activeLink when location changes
+    useEffect(() => {
+        setActiveLink(location.pathname);
+    }, []);
 
     return (
         <>
@@ -26,27 +31,27 @@ const Footer = () => {
 
                 <Link
                     to="care"
-                    className={`${activeLink === "care" ? "active" : ""}`}
-                    onClick={() => handleLinkClick("care")}
+                    className={`${activeLink === "/care" ? "active" : ""}`}
+                    onClick={() => handleLinkClick("/care")}
                 >
                     <i
                         className={`fas fa-blog ${
-                            activeLink === "care" ? "colori" : ""
+                            activeLink === "/care" ? "colori" : ""
                         }`}
                     ></i>{" "}
                     <span>care</span>
                 </Link>
 
                 <Link
-                    to="plan/new plan"
+                    to="plan/new_plan"
                     className={` ${
-                        activeLink === "plan/new plan" ? "active" : ""
+                        activeLink === "/plan/new_plan" ? "active" : ""
                     }`}
-                    onClick={() => handleLinkClick("plan/new plan")}
+                    onClick={() => handleLinkClick("/plan/new_plan")}
                 >
                     <i
                         className={`fas fa-briefcase ${
-                            activeLink === "plan/new plan" ? "colori" : ""
+                            activeLink === "/plan/new_plan" ? "colori" : ""
                         }`}
                     ></i>{" "}
                     <span>plan</span>
@@ -54,12 +59,12 @@ const Footer = () => {
 
                 <Link
                     to="account"
-                    className={`${activeLink === "account" ? "active" : ""}`}
-                    onClick={() => handleLinkClick("account")}
+                    className={`${activeLink === "/account" ? "active" : ""}`}
+                    onClick={() => handleLinkClick("/account")}
                 >
                     <i
                         className={`fas fa-user ${
-                            activeLink === "account" ? "colori" : ""
+                            activeLink === "/account" ? "colori" : ""
                         }`}
                     ></i>{" "}
                     <span>me</span>

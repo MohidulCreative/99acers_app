@@ -30,10 +30,10 @@ const Account = () => {
             </div>
 
             <div className="flex justify-center items-center gap-4">
-                <button className="p-2 bg-blue-500 text-white text-[11px] rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
+                <button className="p-2 bg-blue-500 text-white text-xs rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
                     Withdraw
                 </button>
-                <button className="p-2 bg-orange-500 text-white text-[11px] rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
+                <button className="p-2 bg-orange-500 text-white text-xs rounded-lg shadow-md hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-opacity-75">
                     Add money
                 </button>
             </div>

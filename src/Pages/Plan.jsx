@@ -1,16 +1,21 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import Header from "../components/Header/Header";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import image_1 from "../assets/images/img_1.jpg";
 import comming_soon from "../assets/images/comming_soon.jpg";
 import Newplan from "../components/plan/Newplan";
 
 const Plan = () => {
-      const [activeLink, setActiveLink] = useState('/plan/new plan');
+      const location = useLocation();
+      const [activeLink, setActiveLink] = useState(location.pathname);
     
       const handleLinkClick = (to) => {
         setActiveLink(to);
       };
+
+      useEffect(() => {
+        setActiveLink(location.pathname)
+      }, [])
 
     return (
         <>
@@ -19,9 +24,9 @@ const Plan = () => {
             <div className="w-full border-b bg-black z-30 mt-0 border-gray-500 flex justify-start items-center fixed left-0 right-0 top-[3.5rem]">
                 <Link
                     className={`px-3 py-4 ${
-                        activeLink === "/plan/new plan" ? "border-b-2" : ""
+                        activeLink === "/plan/new_plan" ? "border-b-2" : ""
                     }`}
-                    to="/plan/new plan"
+                    to="/plan/new_plan"
                     onClick={() => handleLinkClick("/plan/new plan")}
                 >
                     New plan
@@ -54,7 +59,7 @@ const Plan = () => {
                     Pro
                 </Link>
             </div>
-            {activeLink === "/plan/new plan" ? (
+            {activeLink === "/plan/new_plan" ? (
                <div>
                 <div className="relative mt-16">
                 <div className="w-full h-auto">
