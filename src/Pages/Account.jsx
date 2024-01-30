@@ -14,7 +14,7 @@ const Account = () => {
             </div>
 
             <div className="flex justify-around items-center py-4 mt-2 gap-2">
-                <div className="text-left bg-[#dc143c] w-1/3 h-16 rounded p-2 text-white">
+                <div className="text-left bg-[#dc143c] w-1/3 rounded p-2 text-white">
                     <p className="text-xs md:text-sm lg:text-base xl:text-lg font-semibold">
                        Invest Income
                     </p>
@@ -22,7 +22,7 @@ const Account = () => {
                         ₹ 8,750
                     </h2>
                 </div>
-                <div className="text-left bg-[#dc143c] w-1/3 h-16 rounded p-2 text-white">
+                <div className="text-left bg-[#dc143c] w-1/3 rounded p-2 text-white">
                     <p className="text-xs md:text-sm lg:text-base xl:text-lg font-semibold">
                         Commission
                     </p>
@@ -30,7 +30,7 @@ const Account = () => {
                         ₹ 50
                     </h2>
                 </div>
-                <div className="text-left bg-[#dc143c] w-1/3 h-16 rounded p-2 text-white">
+                <div className="text-left bg-[#dc143c] w-1/3 rounded p-2 text-white">
                     <p className="text-xs md:text-sm lg:text-base xl:text-lg font-semibold">
                         Total Income
                     </p>
