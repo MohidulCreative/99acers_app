@@ -3,7 +3,7 @@ import React from "react";
 
 const QuckMenu = () => {
     return (
-        <div className="flex gap-4 p-2 pt-0 mb-4 bg-black justify-around items-center fixed top-[64px] left-0 right-0 z-30">
+        <div className="flex gap-4 p-2 mb-4 bg-black justify-around items-center fixed top-[64px] left-0 right-0 z-30">
             {/* About */}
             <div className="text-center flex flex-col justify-center items-center">
                 <div className="rounded-full w-6 h-6 p-5 flex justify-center items-center bg-gray-500 bg-opacity-30">

@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from "react";
-import Header from "../components/Header/Header";
 import { Link, useLocation } from "react-router-dom";
 import image_1 from "../assets/images/img_1.jpg";
 import comming_soon from "../assets/images/comming_soon.jpg";
@@ -19,7 +18,6 @@ const Plan = () => {
 
     return (
         <>
-            <Header />
             {/* plan navigation */}
             <div className="w-full border-b bg-black z-30 mt-0 border-gray-500 flex justify-start items-center fixed left-0 right-0 top-[3.5rem]">
                 <Link
