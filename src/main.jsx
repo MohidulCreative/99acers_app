@@ -9,6 +9,7 @@ import Layout from "./components/Layout.jsx";
 import ErrorPage from './Pages/ErrorPage.jsx'
 import Account from "./Pages/Account.jsx";
 import About from "./Pages/About.jsx";
+import Rules from "./Pages/Rules.jsx";
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -21,6 +22,7 @@ const router = createBrowserRouter(
             <Route path="/plan/advance" element={<Plan />} />
             <Route path="/plan/pro" element={<Plan />} />
             <Route path="/about" element={<About />} />
+            <Route path="/rules" element={<Rules />} />
         </Route>
     )
 )

@@ -3,7 +3,7 @@ import about_img1 from "../assets/images/about_img1.jpg";
 const About = () => {
     return (
         <>
-            <div className="p-8 bg-gray-700 h-full">
+            <div className="p-8 bg-gray-700 h-full pb-16">
                 <img src="logo.png" alt="about logo" />
                 <h2 className="py-4 pb-2 font-bold text-2xl">
                     About White Arrow ?

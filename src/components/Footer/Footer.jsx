@@ -11,7 +11,7 @@ const Footer = () => {
     // Update activeLink when location changes
     useEffect(() => {
         setActiveLink(location.pathname);
-    }, []);
+    }, [location.pathname]);
 
     return (
         <>
