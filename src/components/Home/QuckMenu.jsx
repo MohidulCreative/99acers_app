@@ -30,7 +30,7 @@ const QuckMenu = () => {
             </Link>
 
             {/* WhatsApp */}
-            <Link to="https://whatsapp.com/channel/0029VaAk5jbD38CMnXaH2F1E">
+            <Link to="https://whatsapp.com/channel/0029VaHypF4JUM2SPYzcKc3s">
                 <div className="text-center flex flex-col justify-center items-center">
                     <div className="rounded-full w-4 h-4 flex justify-center items-center p-5 bg-gray-500 bg-opacity-30">
                         <i className="fab fa-whatsapp text-red-500"></i>
