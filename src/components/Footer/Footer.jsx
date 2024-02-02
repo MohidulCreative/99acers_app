@@ -35,7 +35,7 @@ const Footer = () => {
                     onClick={() => handleLinkClick("/care")}
                 >
                     <i
-                        className={`fas fa-blog ${
+                        className={`fas fa-question-circle ${
                             activeLink === "/care" ? "colori" : ""
                         }`}
                     ></i>{" "}

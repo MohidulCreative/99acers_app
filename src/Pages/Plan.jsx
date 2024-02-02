@@ -23,7 +23,7 @@ const Plan = () => {
     return (
         <div className="pb-16">
             {/* plan navigation */}
-            <div className="w-full border-b bg-black z-30 mt-0 border-gray-500 flex justify-start items-center fixed left-0 right-0 top-[3.5rem]">
+            <div className="w-full border-b bg-[#333C4D] z-30 mt-0 border-gray-500 flex justify-start items-center fixed left-0 right-0 top-[3.5rem]">
                 <Link
                     className={`px-3 py-4 ${
                         activeLink === "/plan/new_plan" ? "border-b-2" : ""

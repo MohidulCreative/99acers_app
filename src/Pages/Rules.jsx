@@ -2,7 +2,7 @@ import React from 'react';
 
 const Rules = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 text-black py-10 pb-16">
+    <div className="min-h-screen flex items-center justify-center bg-[#020713] text-black py-10 pb-16">
       <div className="bg-white p-8 rounded shadow-md max-w-md w-[90%]">
         <h2 className="text-2xl font-bold mb-4">Investment Rules</h2>
 

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const QuckMenu = () => {
     return (
-        <div className="flex gap-4 p-2 mb-4 bg-black justify-around items-center fixed top-[64px] left-0 right-0 z-30">
+        <div className="flex gap-4 p-2 mb-4 bg-[#020713] justify-around items-center fixed top-[64px] left-0 right-0 z-30">
             {/* About */}
             <Link to="/about">
                 <div className="text-center flex flex-col justify-center items-center">
