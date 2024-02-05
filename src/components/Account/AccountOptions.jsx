@@ -1,6 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const AccountOptions = () => {
+    const clickHandler = () => {
+        localStorage.removeItem("user");
+        location.reload();
+    };
+
     return (
         <div className="mx-2 my-4 p-2 grid grid-cols-4 bg-slate-700 border border-gray-300 rounded">
             <div className="text-center py-4">
@@ -62,9 +68,13 @@ const AccountOptions = () => {
                 <p className="text-xs leading-[1rem]">New Feature</p>
             </div>
             <div className="text-center py-4">
-                <span className="material-symbols-outlined text-4xl text-blue-500">
+                <Link
+                    to=""
+                    onClick={clickHandler}
+                    className="material-symbols-outlined text-4xl text-blue-500"
+                >
                     logout
-                </span>
+                </Link>
                 <p className="text-xs leading-[1rem]">Logout</p>
             </div>
         </div>
