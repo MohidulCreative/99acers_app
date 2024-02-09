@@ -240,3 +240,23 @@ body {
   padding: 0.5px;
   color: rgba(255, 255, 255, 0.771)
 }
+
+.c-primary-reputation {
+  align-items: center;
+  background-clip: padding-box,border-box;
+  background-image: linear-gradient(var(--backgroundColorA),var(--backgroundColorA)),linear-gradient(#20f,#9e00ff);
+  background-image: linear-gradient(#130b43,#130b43),linear-gradient(#9e00ff,#20f);
+  background-origin: border-box;
+  border: 3px solid transparent;
+  border-radius: 100px;
+  color: #fbfcfe;
+  display: flex;
+  flex-wrap: nowrap;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 200%;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+}

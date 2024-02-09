@@ -41,7 +41,7 @@ const Register = () => {
 
     return (
         <>
-            <div className="max-w-md mx-auto p-6 mt-4 bg-white rounded-md shadow-md">
+            <div className="max-w-md mx-2 p-6 mt-4 bg-white rounded-md shadow-md">
                 <form className="text-black">
                     <div className="text-center">
                         <h2 className="text-2xl">Login</h2>

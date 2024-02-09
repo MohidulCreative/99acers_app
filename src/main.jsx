@@ -24,21 +24,25 @@ import { PrivateRoute } from "./utils/PrivateRoutes.jsx";
 const router = createBrowserRouter(
     createRoutesFromElements(
         <Route>
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
-        <Route element={<PrivateRoute />}>
-        <Route path="/" errorElement={<ErrorPage />} element={<Layout />}>
-            <Route path="/" element={<Home />} />
-            <Route path="/account" element={<Account />} />
-            <Route path="/care" element={<Care />} />
-            <Route path="/plan/new_plan" element={<Plan />} />
-            <Route path="/plan/normal" element={<Plan />} />
-            <Route path="/plan/advance" element={<Plan />} />
-            <Route path="/plan/pro" element={<Plan />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/rules" element={<Rules />} />
-        </Route>
-        </Route>
+            <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<Login />} />
+            <Route element={<PrivateRoute />}>
+                <Route
+                    path="/"
+                    errorElement={<ErrorPage />}
+                    element={<Layout />}
+                >
+                    <Route path="/" element={<Home />} />
+                    <Route path="/account" element={<Account />} />
+                    <Route path="/care" element={<Care />} />
+                    <Route path="/plan/new_plan" element={<Plan />} />
+                    <Route path="/plan/normal" element={<Plan />} />
+                    <Route path="/plan/advance" element={<Plan />} />
+                    <Route path="/plan/pro" element={<Plan />} />
+                    <Route path="/about" element={<About />} />
+                    <Route path="/rules" element={<Rules />} />
+                </Route>
+            </Route>
         </Route>
     )
 );

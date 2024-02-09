@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { account, ID } from "../../lib/appwrite";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { UserContext } from "../../contex/Auth";
 
 const Login = () => {
@@ -9,6 +9,7 @@ const Login = () => {
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
     const { setUser } = useContext(UserContext);
+    const { pathname } = useLocation();
 
     async function login(email, password) {
         try {
@@ -30,9 +31,19 @@ const Login = () => {
         }
     }, [loggedInUser]);
 
+    // check if the user is logged in
+    // useEffect(() => {
+    //     if (pathname === "/login") {
+    //         let user = localStorage.getItem("user");
+    //          if (user) {
+    //             navigate("/");
+    //         }
+    //     }
+    // }, []);
+
     return (
         <>
-            <div className="max-w-md mx-auto p-6 mt-4 bg-white rounded-md shadow-md">
+            <div className="max-w-md mx-2 p-6 mt-4 bg-white rounded-md shadow-md px-2">
                 <form className="text-black">
                     <div className="text-center">
                         <h2 className="text-2xl">Login</h2>

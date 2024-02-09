@@ -81,6 +81,12 @@ const Home = () => {
                         solutions.
                     </p>
                 </div>
+                <div
+                    className="c-primary-reputation mt-10 mb-6"
+                    aria-label="0 reputation"
+                >
+                    <span>Refer & Earn</span>
+                </div>
             </div>
         </>
     );
