@@ -20,6 +20,8 @@ import Register from "./components/auth/Register.jsx";
 import Login from "./components/auth/Login.jsx";
 import { UserProvider } from "./contex/Auth.jsx";
 import { PrivateRoute } from "./utils/PrivateRoutes.jsx";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -54,5 +56,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
                 <App />
             </RouterProvider>
         </UserProvider>
+        <ToastContainer />
     </React.StrictMode>
 );

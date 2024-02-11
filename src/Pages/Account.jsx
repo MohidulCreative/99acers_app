@@ -8,7 +8,7 @@ const Account = () => {
                 <div className="w-14 h-14 ml-4 bg-gray-500 rounded-full flex justify-center items-center" style={{backgroundImage: 'url("logo2.png")', backgroundPosition: "center", backgroundSize: "cover",}}>
                 </div>
                 <div className="px-4">
-                    <h2>userId: <span className="py-1 text-lg md:text-xl lg:text-2xl xl:text-3xl">8653859822</span></h2>
+                    <h2>userId: <span className="py-1 text-lg md:text-xl lg:text-2xl xl:text-3xl">8655859842</span></h2>
                     <p>Balance: <span className="py-1 text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold">₹ 240</span></p>
                 </div>
             </div>

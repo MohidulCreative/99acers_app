@@ -2,8 +2,12 @@ import React from "react";
 import Banner from "../components/Home/Banner";
 import QuckMenu from "../components/Home/QuckMenu";
 import Options from "../components/Home/Options";
+import { toast } from 'react-toastify';
 
 const Home = () => {
+    const toastTest = () => {
+        toast.info("under development")
+    }
     return (
         <>
             <QuckMenu />
@@ -85,7 +89,7 @@ const Home = () => {
                     className="c-primary-reputation mt-10 mb-6"
                     aria-label="0 reputation"
                 >
-                    <span>Refer & Earn</span>
+                    <span onClick={toastTest}>Refer & Earn</span>
                 </div>
             </div>
         </>

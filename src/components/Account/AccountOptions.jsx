@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import BeatLoader from "react-spinners/BeatLoader";
 
 const AccountOptions = () => {
+    const [loading, setLoading] = useState(false);
+    
     const clickHandler = () => {
+        setLoading(true);
         localStorage.removeItem("user");
         location.reload();
     };
@@ -67,15 +71,21 @@ const AccountOptions = () => {
                 </span>
                 <p className="text-xs leading-[1rem]">New Feature</p>
             </div>
-            <div className="text-center py-4">
-                <Link
-                    to=""
-                    onClick={clickHandler}
-                    className="material-symbols-outlined text-4xl text-blue-500"
-                >
-                    logout
-                </Link>
-                <p className="text-xs leading-[1rem]">Logout</p>
+            <div className="text-center py-4 flex items-center justify-center">
+                {loading ? (
+                    <BeatLoader color="#36d7b7" size={10} />
+                ) : (
+                    <div>
+                        <Link
+                            to=""
+                            onClick={clickHandler}
+                            className="material-symbols-outlined text-4xl text-blue-500"
+                        >
+                            logout
+                        </Link>
+                        <p className="text-xs leading-[1rem]">Logout</p>
+                    </div>
+                )}
             </div>
         </div>
     );

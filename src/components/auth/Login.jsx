@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useContext } from "react";
-import { account, ID } from "../../lib/appwrite";
+import { account } from "../../lib/appwrite";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { UserContext } from "../../contex/Auth";
+import { toast } from "react-toastify";
+import BeatLoader from "react-spinners/BeatLoader";
 
 const Login = () => {
     const [loggedInUser, setLoggedInUser] = useState(null);
@@ -9,16 +11,22 @@ const Login = () => {
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
     const { setUser } = useContext(UserContext);
-    const { pathname } = useLocation();
+    // const { pathname } = useLocation();
+    const [loading, setLoading] = useState(false);
 
     async function login(email, password) {
         try {
+            setLoading(true);
             await account.createEmailSession(email, password);
             setLoggedInUser(await account.get());
             setEmail("");
             setPassword("");
+            toast.success("Login success", {autoClose: 3000});
+            setLoading(false);
         } catch (error) {
             console.error("Error fetching user account:", error);
+            toast.error("check email or password!", {autoClose: 3000});
+            setLoading(false);
         }
     }
 
@@ -43,7 +51,7 @@ const Login = () => {
 
     return (
         <>
-            <div className="max-w-md mx-2 p-6 mt-4 bg-white rounded-md shadow-md px-2">
+            <div className="max-w-md mx-auto p-6 mt-4 bg-white rounded-md shadow-md px-2">
                 <form className="text-black">
                     <div className="text-center">
                         <h2 className="text-2xl">Login</h2>
@@ -70,11 +78,11 @@ const Login = () => {
                     />
 
                     <button
-                        className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300"
+                        className="w-full flex justify-center items-center bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300"
                         type="button"
                         onClick={() => login(email, password)}
                     >
-                        Login
+                        {loading ? <BeatLoader color="#36d7b7" /> : "Login"}
                     </button>
                 </form>
             </div>
