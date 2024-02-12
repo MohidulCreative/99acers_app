@@ -373,13 +373,16 @@ a:hover {
 .fa-eye {
   position: absolute;
   left: 355px;
-  top: 225px;
+  top: 228px;
   color: #3b476b;
   font-size: 18px;
   cursor: pointer;
 }
+.pass-eye {
+  top: 288px !important;
+}
 
-.fa-eye.active {
+.active-eye {
   color: #7f60eb;
 }
 
@@ -387,7 +390,7 @@ a:hover {
 .eye {
   position: absolute;
   left: 355px;
-  top: 275px;
+  top: 280px;
 }
 
 /* Device Responsive */
@@ -395,6 +398,9 @@ a:hover {
   .container_form {
     width: 350px;
     top: 45%;
+  }
+  .form-title {
+    margin-bottom: 5px;
   }
 
   .submit-btn {
@@ -407,12 +413,15 @@ a:hover {
   }
 
   .signup {
-    left: 18%;
+    left: 14%;
   }
 
   .fa-eye {
-    left: 305px;
-    top: 230px;
+    left: 307px;
+    top: 236px;
+  }
+  .pass-eye {
+    top: 289px !important;
   }
 
   .eye {
@@ -424,15 +433,21 @@ a:hover {
 
 @media (max-width: 360px) {
   .container_form {
-    width: 300px;
+    width: 330px;
     position: absolute;
     top: 45%;
+  }
+  .form-title {
+    margin-bottom: -17px;
   }
   .fa-eye {
     left: 297px;
     top: 230px;
   }
 
+  .pass-eye {
+    top: 284px !important;
+  }
   .eye {
     position: absolute;
     left: 297px;

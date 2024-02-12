@@ -13,6 +13,11 @@ const Login = () => {
     const { setUser } = useContext(UserContext);
     // const { pathname } = useLocation();
     const [loading, setLoading] = useState(false);
+    const [isPasswordVisible, setPasswordVisible] = useState(false);
+
+    const togglePass = () => {
+        setPasswordVisible(!isPasswordVisible);
+    };
 
     async function login(e, email, password) {
         e.preventDefault();
@@ -68,9 +73,15 @@ const Login = () => {
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                     />
-                    <i className="fa-solid fa-eye" id="eye"></i>
+                    <i
+                        id="eye"
+                        className={`fa-solid fa-eye ${
+                            isPasswordVisible ? "active-eye" : ""
+                        }`}
+                        onClick={togglePass}
+                    ></i>
                     <input
-                        type="password"
+                        type={isPasswordVisible ? "text" : "password"}
                         name="password"
                         placeholder="Passsword"
                         id="password"
@@ -86,49 +97,17 @@ const Login = () => {
                         className="submit-btn bg-[#7f5feb] flex justify-center items-center"
                         onClick={(e) => login(e, email, password)}
                     >
-                      {loading ? <BeatLoader color="#36d7b7" size={10} /> : "Login"}  
+                        {loading ? (
+                            <BeatLoader color="#36d7b7" size={10} />
+                        ) : (
+                            "Login"
+                        )}
                     </button>
                 </form>
-                <Link to="/register" className="signup underline">
+                <Link to="/register" className="signup underline mx-auto">
                     Don't have an account? Sign up
                 </Link>
             </div>
-
-            {/* <div className="max-w-md mx-auto p-6 mt-4 bg-white rounded-md shadow-md px-2">
-                <form className="text-black">
-                    <div className="text-center">
-                        <h2 className="text-2xl">Login</h2>
-                        <p className="pt-2 pb-6">
-                            Don't have an account? please{" "}
-                            <Link to="/register" className="underline">
-                                create account
-                            </Link>
-                        </p>
-                    </div>
-                    <input
-                        className="mb-4 px-3 py-2 w-full border rounded-md text-black"
-                        type="email"
-                        placeholder="Email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                    />
-                    <input
-                        className="mb-4 px-3 py-2 w-full border rounded-md text-black"
-                        type="password"
-                        placeholder="Password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                    />
-
-                    <button
-                        className="w-full flex justify-center items-center bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300"
-                        type="button"
-                        onClick={() => login(email, password)}
-                    >
-                        {loading ? <BeatLoader color="#36d7b7" /> : "Login"}
-                    </button>
-                </form>
-            </div> */}
         </>
     );
 };

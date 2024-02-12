@@ -6,7 +6,7 @@ import { toast } from 'react-toastify';
 
 const Home = () => {
     const toastTest = () => {
-        toast.info("under development")
+        toast.info("under development", { autoClose: 3000 })
     }
     return (
         <>

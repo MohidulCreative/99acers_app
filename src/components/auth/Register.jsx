@@ -14,7 +14,11 @@ const Register = () => {
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
     const { setUser } = useContext(UserContext);
+    const [isPasswordVisible, setPasswordVisible] = useState(false);
 
+    const togglePass = () => {
+        setPasswordVisible(!isPasswordVisible);
+    };
     async function register(e) {
         e.preventDefault();
         try {
@@ -77,9 +81,15 @@ const Register = () => {
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                     />
-                    <i className="fa-solid fa-eye eye" id="eye"></i>
+                    <i
+                        id="eye"
+                        className={`fa-solid fa-eye pass-eye ${
+                            isPasswordVisible ? "active-eye" : ""
+                        }`}
+                        onClick={togglePass}
+                    ></i>
                     <input
-                        type="password"
+                        type={isPasswordVisible ? "text" : "password"}
                         name="password"
                         placeholder="Passsword"
                         id="password"
@@ -99,49 +109,6 @@ const Register = () => {
                     Have an account? Login
                 </Link>
             </div>
-
-            {/* <div className="max-w-md mx-auto p-6 mt-4 bg-white rounded-md shadow-md">
-                <form className="text-black">
-                    <div className="text-center">
-                        <h2 className="text-2xl">Login</h2>
-                        <p className="pt-2 pb-6">
-                            Have an account?{" "}
-                            <Link to="/login" className="underline">
-                                login here
-                            </Link>
-                        </p>
-                    </div>
-                    <input
-                        className="mb-4 px-3 py-2 w-full border rounded-md text-black"
-                        type="email"
-                        placeholder="Email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                    />
-                    <input
-                        className="mb-4 px-3 py-2 w-full border rounded-md text-black"
-                        type="password"
-                        placeholder="Password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                    />
-                    <input
-                        className="mb-4 px-3 py-2 w-full border rounded-md text-black"
-                        type="text"
-                        placeholder="Name"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                    />
-
-                    <button
-                        className="w-full flex justify-center items-center bg-green-500 text-white py-2 rounded-md hover:bg-green-600 focus:outline-none focus:ring focus:border-green-300 mt-2"
-                        type="button"
-                        onClick={register}
-                    >
-                    {loading ? <BeatLoader color="#36d7b7" /> : "Register"}
-                    </button>
-                </form>
-            </div> */}
         </>
     );
 };
