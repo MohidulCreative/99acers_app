@@ -18,6 +18,7 @@ import Rules from "./Pages/Rules.jsx";
 import Care from "./Pages/Care.jsx";
 import Register from "./components/auth/Register.jsx";
 import Login from "./components/auth/Login.jsx";
+import Password_reset from "./components/auth/Password_reset.jsx";
 import { UserProvider } from "./contex/Auth.jsx";
 import { PrivateRoute } from "./utils/PrivateRoutes.jsx";
 import { ToastContainer } from "react-toastify";
@@ -28,6 +29,7 @@ const router = createBrowserRouter(
         <Route>
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/password_reset" element={<Password_reset />} />
             <Route element={<PrivateRoute />}>
                 <Route
                     path="/"

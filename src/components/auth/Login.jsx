@@ -14,18 +14,19 @@ const Login = () => {
     // const { pathname } = useLocation();
     const [loading, setLoading] = useState(false);
 
-    async function login(email, password) {
+    async function login(e, email, password) {
+        e.preventDefault();
         try {
             setLoading(true);
             await account.createEmailSession(email, password);
             setLoggedInUser(await account.get());
             setEmail("");
             setPassword("");
-            toast.success("Login success", {autoClose: 3000});
+            toast.success("Login success", { autoClose: 3000 });
             setLoading(false);
         } catch (error) {
             console.error("Error fetching user account:", error);
-            toast.error("check email or password!", {autoClose: 3000});
+            toast.error("check email or password!", { autoClose: 3000 });
             setLoading(false);
         }
     }
@@ -51,7 +52,49 @@ const Login = () => {
 
     return (
         <>
-            <div className="max-w-md mx-auto p-6 mt-4 bg-white rounded-md shadow-md px-2">
+            <div className="container_form">
+                <form className="form-box">
+                    <div className="form-title">
+                        <h4>
+                            Login<span>Form</span>
+                        </h4>
+                        <h5>Sign in to your account</h5>
+                    </div>
+                    <input
+                        type="text"
+                        name="email"
+                        placeholder="Email"
+                        required
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
+                    <i className="fa-solid fa-eye" id="eye"></i>
+                    <input
+                        type="password"
+                        name="password"
+                        placeholder="Passsword"
+                        id="password"
+                        required
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                    />
+                    <Link to="/password_reset" className="forgot-pass">
+                        Forgot Password?
+                    </Link>
+                    <button
+                        type="submit"
+                        className="submit-btn bg-[#7f5feb] flex justify-center items-center"
+                        onClick={(e) => login(e, email, password)}
+                    >
+                      {loading ? <BeatLoader color="#36d7b7" size={10} /> : "Login"}  
+                    </button>
+                </form>
+                <Link to="/register" className="signup underline">
+                    Don't have an account? Sign up
+                </Link>
+            </div>
+
+            {/* <div className="max-w-md mx-auto p-6 mt-4 bg-white rounded-md shadow-md px-2">
                 <form className="text-black">
                     <div className="text-center">
                         <h2 className="text-2xl">Login</h2>
@@ -85,7 +128,7 @@ const Login = () => {
                         {loading ? <BeatLoader color="#36d7b7" /> : "Login"}
                     </button>
                 </form>
-            </div>
+            </div> */}
         </>
     );
 };
