@@ -23,6 +23,7 @@ import { UserProvider } from "./contex/Auth.jsx";
 import { PrivateRoute } from "./utils/PrivateRoutes.jsx";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Deposit from "./Pages/Deposit.jsx";
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -45,6 +46,7 @@ const router = createBrowserRouter(
                     <Route path="/plan/pro" element={<Plan />} />
                     <Route path="/about" element={<About />} />
                     <Route path="/rules" element={<Rules />} />
+                    <Route path="/deposit" element={<Deposit />} />
                 </Route>
             </Route>
         </Route>

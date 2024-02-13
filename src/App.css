@@ -331,15 +331,6 @@ body {
   border: 1px solid #79a6fe;
 }
 
-a {
-  color: #5c7fda;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
 .submit-btn {
   border: 0;
   background: #7f5feb;

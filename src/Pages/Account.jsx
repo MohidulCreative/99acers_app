@@ -9,7 +9,7 @@ const Account = () => {
                 </div>
                 <div className="px-4">
                     <h2>userId: <span className="py-1 text-lg md:text-xl lg:text-2xl xl:text-3xl">8655859842</span></h2>
-                    <p>Balance: <span className="py-1 text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold">₹ 240</span></p>
+                    <p>Balance: <span className="py-1 text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold">₹240</span></p>
                 </div>
             </div>
 
@@ -19,7 +19,7 @@ const Account = () => {
                        Invest Income
                     </p>
                     <h2 className="py-1 text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold">
-                        ₹ 8,750
+                        ₹8,750
                     </h2>
                 </div>
                 <div className="text-left bg-[#dc143c] w-1/3 rounded p-2 text-white">
@@ -27,7 +27,7 @@ const Account = () => {
                         Commission
                     </p>
                     <h2 className="py-1 text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold">
-                        ₹ 50
+                        ₹50
                     </h2>
                 </div>
                 <div className="text-left bg-[#dc143c] w-1/3 rounded p-2 text-white">
@@ -35,7 +35,7 @@ const Account = () => {
                         Total Income
                     </p>
                     <h2 className="py-1 text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold">
-                        ₹ 8,700
+                        ₹8,700
                     </h2>
                 </div>
             </div>

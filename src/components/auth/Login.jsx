@@ -89,7 +89,7 @@ const Login = () => {
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                     />
-                    <Link to="/password_reset" className="forgot-pass">
+                    <Link to="/password_reset" className="forgot-pass underline">
                         Forgot Password?
                     </Link>
                     <button
