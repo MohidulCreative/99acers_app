@@ -24,6 +24,7 @@ import { PrivateRoute } from "./utils/PrivateRoutes.jsx";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Deposit from "./Pages/Deposit.jsx";
+import AddBank from "./Pages/AddBank.jsx";
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -47,6 +48,7 @@ const router = createBrowserRouter(
                     <Route path="/about" element={<About />} />
                     <Route path="/rules" element={<Rules />} />
                     <Route path="/deposit" element={<Deposit />} />
+                    <Route path="/addbank" element={<AddBank />} />
                 </Route>
             </Route>
         </Route>

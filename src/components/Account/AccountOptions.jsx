@@ -10,14 +10,29 @@ const AccountOptions = () => {
         localStorage.removeItem("user");
         location.reload();
     };
+    const clickHandleraddbank = () => {
+        setLoading(true)
+        console.log("Add your bank account");
+        setLoading(false)
+    }
 
     return (
         <div className="mx-2 my-4 p-2 grid grid-cols-4 bg-slate-700 border border-gray-300 rounded">
             <div className="text-center py-4">
-                <span className="material-symbols-outlined text-4xl text-blue-500">
-                    account_balance
-                </span>
-                <p className="text-xs leading-[1rem]">Add Bank</p>
+            {loading ? (
+                    <BeatLoader color="#36d7b7" size={10} />
+                ) : (
+                    <div>
+                        <Link
+                            to="/addbank"
+                            onClick={clickHandleraddbank}
+                            className="material-symbols-outlined text-4xl text-blue-500"
+                        >
+                             account_balance
+                        </Link>
+                        <p className="text-xs leading-[1rem]">Add Bank</p>
+                    </div>
+                )}
             </div>
             <div className="text-center py-4">
                 <span className="material-symbols-outlined text-4xl text-blue-500">
