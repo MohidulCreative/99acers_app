@@ -1,20 +1,54 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { databases } from "../lib/appwrite";
 
 function AddBank() {
     const [name, setName] = useState("");
     const [account, setAccount] = useState("");
     const [IFC, setIFC] = useState("");
+    const [data, setData] = useState("");
     const history = useNavigate();
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Do something with the form data, for example:
-        console.log("Name:", name);
-        console.log("Account:", account);
-        console.log("IFC Code:", IFC);
+        try {
+            await databases.createDocument(
+                "65f9a34195bb3fac17af",
+                "65f9bccca7fff2a0e300",
+                account,
+                {
+                    name: name,
+                    account_number: account,
+                    ifc_code: IFC,
+                }
+            );
+        } catch (error) {
+            console.error(error);
+        }
+
+        if (localStorage.getItem("account")) {
+            localStorage.removeItem("account");
+        }
+        localStorage.setItem("account", account);
         history("/account");
     };
+
+    useEffect(() => {
+        try {
+            let account = localStorage.getItem("account");
+            const data = async () => {
+                let getdata = await databases.getDocument(
+                    "65f9a34195bb3fac17af",
+                    "65f9bccca7fff2a0e300",
+                    account
+                );
+                setData(getdata);
+            };
+            data();
+        } catch (error) {
+            console.error(error);
+        }
+    }, []);
 
     return (
         <div className="mx-auto p-2 my-4">
@@ -26,8 +60,8 @@ function AddBank() {
                     <i className="fa-solid fa-money-check text-4xl"></i>
                 </div>
                 <div className="px-2">
-                    <h3>{name}</h3>
-                    <p>{`${account} (${name})`}</p>
+                    <h3>{data.name}</h3>
+                    <p>{`${data.account_number} (${data.ifc_code})`}</p>
                 </div>
             </div>
             <h2>Add your bank account</h2>
