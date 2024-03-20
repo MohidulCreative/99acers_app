@@ -27,16 +27,32 @@ function AddBank() {
             console.error(error);
         }
 
-        if (localStorage.getItem("account")) {
-            localStorage.removeItem("account");
+        history("/account");
+    };
+
+    const handleSubmit2 = async (e) => {
+        e.preventDefault();
+        try {
+            const user = await userAccount.get();
+            await databases.updateDocument(
+                "65f9a34195bb3fac17af",
+                "65f9bccca7fff2a0e300",
+                user.$id,
+                {
+                    name: name,
+                    account_number: account,
+                    ifc_code: IFC,
+                }
+            );
+        } catch (error) {
+            console.error(error);
         }
-        localStorage.setItem("account", account);
+
         history("/account");
     };
 
     useEffect(() => {
         try {
-            let account = localStorage.getItem("account");
             const data = async () => {
                 const user = await userAccount.get();
                 let getdata = await databases.getDocument(
@@ -71,13 +87,14 @@ function AddBank() {
                 </div>
             </div>
             <h2>Add your bank account</h2>
-            <form className="flex flex-col gap-2 mt-2" onSubmit={handleSubmit}>
+            <form className="flex flex-col gap-2 mt-2">
                 <input
                     className="bg-gray-300 py-2 px-2 text-black rounded"
                     type="text"
                     placeholder="Name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
+                    required
                 />
                 <input
                     className="bg-gray-300 py-2 px-2 text-black rounded"
@@ -85,6 +102,7 @@ function AddBank() {
                     placeholder="Account No"
                     value={account}
                     onChange={(e) => setAccount(e.target.value)}
+                    required
                 />
                 <input
                     className="bg-gray-300 py-2 px-2 text-black rounded"
@@ -92,12 +110,21 @@ function AddBank() {
                     placeholder="IFC code"
                     value={IFC}
                     onChange={(e) => setIFC(e.target.value)}
+                    required
                 />
-                <input
-                    className="bg-[crimson] p-1 text-xl rounded"
-                    type="submit"
-                    value="Save"
-                />
+                {data ? (
+                    <button
+                        className="bg-[crimson] p-1 text-xl rounded"
+                        type="submit"
+                        onClick={handleSubmit2}
+                    >change</button>
+                ) : (
+                    <button
+                        className="bg-[crimson] p-1 text-xl rounded"  
+                        type="submit"
+                        onClick={handleSubmit}                     
+                    >save</button>
+                )}
             </form>
         </div>
     );
