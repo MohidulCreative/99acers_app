@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { databases } from "../lib/appwrite";
+import { databases, account as userAccount } from "../lib/appwrite";
 
 function AddBank() {
     const [name, setName] = useState("");
@@ -12,10 +12,11 @@ function AddBank() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
+            const user = await userAccount.get();
             await databases.createDocument(
                 "65f9a34195bb3fac17af",
                 "65f9bccca7fff2a0e300",
-                account,
+                user.$id,
                 {
                     name: name,
                     account_number: account,
@@ -37,10 +38,11 @@ function AddBank() {
         try {
             let account = localStorage.getItem("account");
             const data = async () => {
+                const user = await userAccount.get();
                 let getdata = await databases.getDocument(
                     "65f9a34195bb3fac17af",
                     "65f9bccca7fff2a0e300",
-                    account
+                    user.$id
                 );
                 setData(getdata);
             };
@@ -60,8 +62,12 @@ function AddBank() {
                     <i className="fa-solid fa-money-check text-4xl"></i>
                 </div>
                 <div className="px-2">
-                    <h3>{data.name}</h3>
-                    <p>{`${data.account_number} (${data.ifc_code})`}</p>
+                    <h3>{data.name ? data.name : "Name"}</h3>
+                    <p>
+                        {data.account_number
+                            ? `${data.account_number} (${data.ifc_code})`
+                            : "Account Number (IFC Code)"}
+                    </p>
                 </div>
             </div>
             <h2>Add your bank account</h2>
