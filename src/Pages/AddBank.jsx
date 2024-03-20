@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { databases, account as userAccount } from "../lib/appwrite";
+import { toast } from "react-toastify";
 
 function AddBank() {
     const [name, setName] = useState("");
@@ -13,37 +14,28 @@ function AddBank() {
         e.preventDefault();
         try {
             const user = await userAccount.get();
-            await databases.createDocument(
-                "65f9a34195bb3fac17af",
-                "65f9bccca7fff2a0e300",
-                user.$id,
-                {
-                    name: name,
-                    account_number: account,
-                    ifc_code: IFC,
-                }
-            );
-        } catch (error) {
-            console.error(error);
-        }
-
-        history("/account");
-    };
-
-    const handleSubmit2 = async (e) => {
-        e.preventDefault();
-        try {
-            const user = await userAccount.get();
-            await databases.updateDocument(
-                "65f9a34195bb3fac17af",
-                "65f9bccca7fff2a0e300",
-                user.$id,
-                {
-                    name: name,
-                    account_number: account,
-                    ifc_code: IFC,
-                }
-            );
+            data
+                ? await databases.updateDocument(
+                      "65f9a34195bb3fac17af",
+                      "65f9bccca7fff2a0e300",
+                      user.$id,
+                      {
+                          name: name,
+                          account_number: account,
+                          ifc_code: IFC,
+                      }
+                  )
+                : await databases.createDocument(
+                      "65f9a34195bb3fac17af",
+                      "65f9bccca7fff2a0e300",
+                      user.$id,
+                      {
+                          name: name,
+                          account_number: account,
+                          ifc_code: IFC,
+                      }
+                  );
+            toast.success("save successfully", { autoClose: 3000 });
         } catch (error) {
             console.error(error);
         }
@@ -87,7 +79,7 @@ function AddBank() {
                 </div>
             </div>
             <h2>Add your bank account</h2>
-            <form className="flex flex-col gap-2 mt-2">
+            <form className="flex flex-col gap-2 mt-2" onSubmit={handleSubmit}>
                 <input
                     className="bg-gray-300 py-2 px-2 text-black rounded"
                     type="text"
@@ -113,17 +105,17 @@ function AddBank() {
                     required
                 />
                 {data ? (
-                    <button
+                    <input
                         className="bg-[crimson] p-1 text-xl rounded"
                         type="submit"
-                        onClick={handleSubmit2}
-                    >change</button>
+                        value="change"
+                    />
                 ) : (
-                    <button
-                        className="bg-[crimson] p-1 text-xl rounded"  
+                    <input
+                        className="bg-[crimson] p-1 text-xl rounded"
                         type="submit"
-                        onClick={handleSubmit}                     
-                    >save</button>
+                        value="save"
+                    />
                 )}
             </form>
         </div>
